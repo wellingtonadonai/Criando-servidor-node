@@ -1,0 +1,24 @@
+Server de Estatísticas de Uso de RAM
+Este é um servidor simples construído com Node.js que fornece estatísticas de uso de RAM de um computador. Ele utiliza um módulo interno para coletar essas informações e as disponibiliza através de uma API REST.
+
+Funcionalidades
+Obtenção de Estatísticas: Acessando a rota /stats, o servidor retorna as estatísticas atuais de uso de RAM do computador em que está sendo executado.
+Requisitos
+Certifique-se de ter o Node.js instalado em seu sistema. Você pode baixá-lo em nodejs.org.
+
+Como Usar
+Instalação de Dependências: Antes de iniciar o servidor, instale as dependências necessárias executando o comando npm install no terminal.
+Iniciar o Servidor: Execute o servidor com o comando node server.js.
+Acessar as Estatísticas: Abra seu navegador ou utilize um cliente HTTP (como cURL ou Postman) para acessar http://localhost:3000/stats. Isso retornará um JSON contendo as estatísticas de uso de RAM do seu sistema.
+
+
+Estrutura do Projeto
+server.js: Este arquivo contém o código do servidor HTTP. Ele escuta as requisições na porta 3000 e fornece as estatísticas quando a rota /stats é acessada.
+PcRamUsage.js: Este módulo interno é responsável por coletar as estatísticas de uso de RAM do sistema. Ele utiliza os módulos os e fs do Node.js para obter essas informações.
+Observações
+Este servidor está configurado para atualizar as estatísticas a cada segundo. Você pode ajustar o intervalo de atualização modificando o segundo parâmetro do setInterval em PcRamUsage.js.
+As estatísticas são retornadas em formato JSON para a rota /stats, tornando-o ideal para integração com outras aplicações.
+
+
+Certifique-se de ter permissões adequadas para acessar as informações de RAM do sistema, especialmente se estiver executando em um ambiente com restrições de segurança.
+Este é um projeto simples destinado a fornecer um exemplo básico de como criar um servidor HTTP para fornecer estatísticas de uso de RAM. Sinta-se à vontade para expandir e personalizar conforme necessário para atender às suas necessidades.
